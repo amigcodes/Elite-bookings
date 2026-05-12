@@ -1,0 +1,139 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.title{
+  margin-right: 1000px;
+
+}
+.nav-link{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  margin-left: 700px;
+  text-decoration: underline;
+}
+.title head{
+
+  margin-right: 100px;
+  display: flex;
+}
+.nav img{
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.nav img:hover {
+  transform: scale(1.15);
+}
+.footer_backround{
+  background-Color: #4300FF;
+}
+/* Page background */
+body {
+  background-color: #F9FAFB;
+}
+
+/* Card */
+.bus-card {
+  width: 200px;          /* your requested width */
+  height: 200px;         /* your requested height */
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  overflow: hidden;
+  transition: 0.3s ease;
+  margin: auto;
+}
+
+/* Hover effect */
+.bus-card:hover {
+  transform: translateY(-4px);
+  border-color: #4F46E5;
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.25);
+}
+
+/* Image (fit inside fixed height card) */
+.bus-card .product_img {
+  height: 70px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Text styles */
+.bus-card h5 {
+  font-size: 14px;
+  color: #111827;
+  margin: 5px 0;
+}
+
+.bus-card p {
+  font-size: 11px;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+/* Price */
+.bus-card .text-warning {
+  color: #F43F5E !important; /* Accent */
+  font-size: 12px;
+}
+
+/* Seats */
+.bus-card .text-success {
+  color: #8B5CF6 !important; /* Secondary */
+  font-size: 11px;
+}
+
+/* Button */
+.bus-card .btn-dark {
+  background-color: #4F46E5; /* Primary */
+  border: none;
+  font-size: 12px;
+  padding: 4px;
+}
+
+.bus-card .btn-dark:hover {
+  background-color: #8B5CF6;
+}
+
+/* Layout spacing fix for Bootstrap grid */
+.card-margin {
+  display: flex;
+  justify-content: center;
+}
