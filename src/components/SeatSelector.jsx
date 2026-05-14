@@ -93,8 +93,7 @@ const SeatSelector = () => {
         setUsername(storedUsername);
       }
     }
-  }, [product]);
-  
+  }, [product, fetchSeats, navigate]);
   const getSeatColor = (seat) => {
     if (seat.status === 'booked') return 'seat booked';
     if (selectedSeats.find(s => s.seat_id === seat.seat_id)) return 'seat selected';

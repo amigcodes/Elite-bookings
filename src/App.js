@@ -1,7 +1,7 @@
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
-import { BrowserRouter as Router, Routes,Route,Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes,Route} from 'react-router-dom';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import MpesaPayment from './components/MpesaPayment';
@@ -18,8 +18,7 @@ function App() {
     <div className='image-backround'>
       <Router >
       <div className="App">
-        <div className='title'>
-          <h2></h2>
+        <div className='title'>  
           </div>
       {/* routing the components */}
       <div  className='nav-link'> 
