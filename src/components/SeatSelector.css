@@ -23,7 +23,7 @@
 }
 
 .seat {
-  aspect-ratio: 1;
+ 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +64,7 @@
 }
 
 .booking-summary {
-  position: sticky;
+  position: absolute;
   top: 20px;
 }
 
