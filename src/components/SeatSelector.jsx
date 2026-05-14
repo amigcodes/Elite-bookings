@@ -14,31 +14,9 @@ const SeatSelector = () => {
   const [error, setError] = useState('');
   const [username, setUsername] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useState(null);
+  // const [userData, setUserData] = useState(null);
   
-  useEffect(() => {
-    if (!product) {
-      navigate('/getproduct');
-      return;
-    }
-    fetchSeats();
-    
-    // Check login status
-    const storedUser = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-    const storedUsername = localStorage.getItem('username');
-    
-    if (storedUser || token || storedUsername) {
-      setIsLoggedIn(true);
-      try {
-        const user = storedUser ? JSON.parse(storedUser) : { username: storedUsername };
-        setUserData(user);
-        setUsername(user.username || storedUsername);
-      } catch (e) {
-        setUsername(storedUsername);
-      }
-    }
-  }, [product]);
+  
   
   const fetchSeats = async () => {
     try {
@@ -93,6 +71,29 @@ const SeatSelector = () => {
       }
     });
   };
+  useEffect(() => {
+    if (!product) {
+      navigate('/getproduct');
+      return;
+    }
+    fetchSeats();
+    
+    // Check login status
+    const storedUser = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    const storedUsername = localStorage.getItem('username');
+    
+    if (storedUser || token || storedUsername) {
+      setIsLoggedIn(true);
+      try {
+        const user = storedUser ? JSON.parse(storedUser) : { username: storedUsername };
+        // setUserData(user);
+        setUsername(user.username || storedUsername);
+      } catch (e) {
+        setUsername(storedUsername);
+      }
+    }
+  }, [product]);
   
   const getSeatColor = (seat) => {
     if (seat.status === 'booked') return 'seat booked';
@@ -156,7 +157,7 @@ const SeatSelector = () => {
               <div className="card-header bg-gradient bg-primary text-white py-3">
                 <h5 className="mb-0">
                   <i className="bi bi-bus-front me-2"></i>
-                  Select Your Seats
+                  Select Your Seats {username && <span className="text-warning">({username})</span>}
                 </h5>
               </div>
               <div className="card-body p-4">

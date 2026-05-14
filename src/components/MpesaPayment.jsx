@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import image from '../logo.svg'
+// import image from '../logo.svg'
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
@@ -10,7 +10,7 @@ const MpesaPayment = () => {
   const { product,calculatedTotal } = location.state || {};
 
   const [phone, setPhone] = useState("")
-  const [email, setEmail] = useState("")
+  // const [email, setEmail] = useState("")
   
   // status messages 
   const [Loading, setLoading] = useState("")
@@ -78,7 +78,7 @@ const MpesaPayment = () => {
     setError("");
     setSuccess("");
     setPhone("");
-    setEmail("");
+    // setEmail("");
   }
 
   return (

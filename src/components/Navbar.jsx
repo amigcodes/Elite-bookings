@@ -37,7 +37,7 @@ function Navbar() {
             alt="logo" 
           />
         </div>
-        <h3 className="title head"></h3>
+        {/* <h3 className="title head"></h3> */}
       </NavLink>
 
       {/* Mobile toggle */}
