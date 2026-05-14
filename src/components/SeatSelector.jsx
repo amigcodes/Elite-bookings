@@ -18,18 +18,7 @@ const SeatSelector = () => {
   
   
   
-  const fetchSeats = async () => {
-    try {
-      const productId = product.product_id || product.id;
-      const response = await axios.get(`https://aronfungo.alwaysdata.net/api/get_bus_seats/${productId}`);
-      setSeats(response.data);
-      setLoading(false);
-    } catch (err) {
-      console.error('Error fetching seats:', err);
-      setError('Failed to load seats');
-      setLoading(false);
-    }
-  };
+ 
   
   const handleSeatClick = (seat) => {
     if (seat.status === 'booked') return;
@@ -76,6 +65,18 @@ const SeatSelector = () => {
       navigate('/getproduct');
       return;
     }
+     const fetchSeats = async () => {
+    try {
+      const productId = product.product_id || product.id;
+      const response = await axios.get(`https://aronfungo.alwaysdata.net/api/get_bus_seats/${productId}`);
+      setSeats(response.data);
+      setLoading(false);
+    } catch (err) {
+      console.error('Error fetching seats:', err);
+      setError('Failed to load seats');
+      setLoading(false);
+    }
+  };
     fetchSeats();
     
     // Check login status
@@ -93,7 +94,7 @@ const SeatSelector = () => {
         setUsername(storedUsername);
       }
     }
-  }, [product, fetchSeats, navigate]);
+  }, [product, navigate]);
   const getSeatColor = (seat) => {
     if (seat.status === 'booked') return 'seat booked';
     if (selectedSeats.find(s => s.seat_id === seat.seat_id)) return 'seat selected';
